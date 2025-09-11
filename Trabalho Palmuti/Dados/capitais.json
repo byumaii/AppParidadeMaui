@@ -1,0 +1,218 @@
+[
+  {
+    "Id": 1,
+    "Nome": "Aracaju",
+    "EstadoSigla": "SE",
+    "EstadoId": 28,
+    "Latitude": -10.9167,
+    "Longitude": -37.05
+  },
+  {
+    "Id": 2,
+    "Nome": "Belém",
+    "EstadoSigla": "PA",
+    "EstadoId": 15,
+    "Latitude": -1.4558,
+    "Longitude": -48.5044
+  },
+  {
+    "Id": 3,
+    "Nome": "Belo Horizonte",
+    "EstadoSigla": "MG",
+    "EstadoId": 31,
+    "Latitude": -19.9167,
+    "Longitude": -43.9345
+  },
+  {
+    "Id": 4,
+    "Nome": "Boa Vista",
+    "EstadoSigla": "RR",
+    "EstadoId": 14,
+    "Latitude": 2.8235,
+    "Longitude": -60.6758
+  },
+  {
+    "Id": 5,
+    "Nome": "Brasília",
+    "EstadoSigla": "DF",
+    "EstadoId": 53,
+    "Latitude": -15.7942,
+    "Longitude": -47.8825
+  },
+  {
+    "Id": 6,
+    "Nome": "Campo Grande",
+    "EstadoSigla": "MS",
+    "EstadoId": 50,
+    "Latitude": -20.4697,
+    "Longitude": -54.6201
+  },
+  {
+    "Id": 7,
+    "Nome": "Cuiabá",
+    "EstadoSigla": "MT",
+    "EstadoId": 51,
+    "Latitude": -15.6014,
+    "Longitude": -56.0977
+  },
+  {
+    "Id": 8,
+    "Nome": "Curitiba",
+    "EstadoSigla": "PR",
+    "EstadoId": 41,
+    "Latitude": -25.4284,
+    "Longitude": -49.2733
+  },
+  {
+    "Id": 9,
+    "Nome": "Florianópolis",
+    "EstadoSigla": "SC",
+    "EstadoId": 42,
+    "Latitude": -27.5954,
+    "Longitude": -48.5480
+  },
+  {
+    "Id": 10,
+    "Nome": "Fortaleza",
+    "EstadoSigla": "CE",
+    "EstadoId": 23,
+    "Latitude": -3.7319,
+    "Longitude": -38.5267
+  },
+  {
+    "Id": 11,
+    "Nome": "Goiânia",
+    "EstadoSigla": "GO",
+    "EstadoId": 52,
+    "Latitude": -16.6869,
+    "Longitude": -49.2648
+  },
+  {
+    "Id": 12,
+    "Nome": "João Pessoa",
+    "EstadoSigla": "PB",
+    "EstadoId": 25,
+    "Latitude": -7.1195,
+    "Longitude": -34.8628
+  },
+  {
+    "Id": 13,
+    "Nome": "Macapá",
+    "EstadoSigla": "AP",
+    "EstadoId": 16,
+    "Latitude": 0.0389,
+    "Longitude": -51.0664
+  },
+  {
+    "Id": 14,
+    "Nome": "Maceió",
+    "EstadoSigla": "AL",
+    "EstadoId": 27,
+    "Latitude": -9.6659,
+    "Longitude": -35.7350
+  },
+  {
+    "Id": 15,
+    "Nome": "Manaus",
+    "EstadoSigla": "AM",
+    "EstadoId": 13,
+    "Latitude": -3.1190,
+    "Longitude": -60.0217
+  },
+  {
+    "Id": 16,
+    "Nome": "Natal",
+    "EstadoSigla": "RN",
+    "EstadoId": 24,
+    "Latitude": -5.7945,
+    "Longitude": -35.2110
+  },
+  {
+    "Id": 17,
+    "Nome": "Palmas",
+    "EstadoSigla": "TO",
+    "EstadoId": 17,
+    "Latitude": -10.1844,
+    "Longitude": -48.3336
+  },
+  {
+    "Id": 18,
+    "Nome": "Porto Alegre",
+    "EstadoSigla": "RS",
+    "EstadoId": 43,
+    "Latitude": -30.0346,
+    "Longitude": -51.2177
+  },
+  {
+    "Id": 19,
+    "Nome": "Porto Velho",
+    "EstadoSigla": "RO",
+    "EstadoId": 11,
+    "Latitude": -8.7619,
+    "Longitude": -63.9039
+  },
+  {
+    "Id": 20,
+    "Nome": "Recife",
+    "EstadoSigla": "PE",
+    "EstadoId": 26,
+    "Latitude": -8.0476,
+    "Longitude": -34.8770
+  },
+  {
+    "Id": 21,
+    "Nome": "Rio Branco",
+    "EstadoSigla": "AC",
+    "EstadoId": 12,
+    "Latitude": -9.9749,
+    "Longitude": -67.8243
+  },
+  {
+    "Id": 22,
+    "Nome": "Rio de Janeiro",
+    "EstadoSigla": "RJ",
+    "EstadoId": 33,
+    "Latitude": -22.9068,
+    "Longitude": -43.1729
+  },
+  {
+    "Id": 23,
+    "Nome": "Salvador",
+    "EstadoSigla": "BA",
+    "EstadoId": 29,
+    "Latitude": -12.9777,
+    "Longitude": -38.5016
+  },
+  {
+    "Id": 24,
+    "Nome": "São Luís",
+    "EstadoSigla": "MA",
+    "EstadoId": 21,
+    "Latitude": -2.5307,
+    "Longitude": -44.3068
+  },
+  {
+    "Id": 25,
+    "Nome": "São Paulo",
+    "EstadoSigla": "SP",
+    "EstadoId": 35,
+    "Latitude": -23.5505,
+    "Longitude": -46.6333
+  },
+  {
+    "Id": 26,
+    "Nome": "Teresina",
+    "EstadoSigla": "PI",
+    "EstadoId": 22,
+    "Latitude": -5.0949,
+    "Longitude": -42.8041
+  },
+  {
+    "Id": 27,
+    "Nome": "Vitória",
+    "EstadoSigla": "ES",
+    "EstadoId": 32,
+    "Latitude": -20.3155,
+    "Longitude": -40.3128
+  }
+]

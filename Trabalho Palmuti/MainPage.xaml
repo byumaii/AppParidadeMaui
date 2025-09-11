@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Trabalho_Palmuti.MainPage"
+             xmlns:models="clr-namespace:Trabalho_Palmuti.Models"
+             Title="Capitais do Brasil"
+             BackgroundColor="{AppThemeBinding Light={StaticResource PageBackgroundColorLight}, Dark={StaticResource PageBackgroundColorDark}}">
+
+    <Grid RowDefinitions="Auto, *, Auto">
+
+        <SearchBar Grid.Row="0" 
+                   Placeholder="Buscar por capital ou sigla do estado..."
+                   TextChanged="OnSearchTextChanged" 
+                   Focused="OnSearchBarFocused" 
+                   Unfocused="OnSearchBarUnfocused" />
+
+        <CollectionView Grid.Row="1" ItemsSource="{Binding Capitais}" IsVisible="{Binding IsListVisible}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Capital">
+                    <Frame Margin="10" 
+                           Padding="10" 
+                           BorderColor="LightGray" 
+                           CornerRadius="5"
+                           BackgroundColor="{AppThemeBinding Light={StaticResource FrameBackgroundColorLight}, Dark={StaticResource FrameBackgroundColorDark}}">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnCapitalTapped" />
+                        </Frame.GestureRecognizers>
+
+                        <VerticalStackLayout>
+                            <Label FontSize="18" FontAttributes="Bold" Text="{Binding Nome}" />
+                            <Label FontSize="14" Text="{Binding EstadoSigla}" />
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Grid.Row="2"
+        Text="Obter Localização Atual"
+        Margin="10"
+        Clicked="OnLocationClicked"
+        BackgroundColor="{AppThemeBinding Light={StaticResource AccentColorLight}, Dark={StaticResource AccentColorDark}}"
+        TextColor="{AppThemeBinding Light={StaticResource PrimaryTextColorDark}, Dark={StaticResource PrimaryTextColorLight}}" />
+
+    </Grid>
+
+</ContentPage>
