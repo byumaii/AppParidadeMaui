@@ -15,6 +15,13 @@ public partial class MainPage : ContentPage
         base.OnAppearing();
         var viewModel = (MainViewModel)BindingContext;
         await viewModel.InicializarAsync();
+
+        if (AppMetrics.ColdStartStopwatch.IsRunning)
+        {
+            AppMetrics.ColdStartStopwatch.Stop();
+            long elapsedMilliseconds = AppMetrics.ColdStartStopwatch.ElapsedMilliseconds;
+            Console.WriteLine($"[AppMetrics] Cold start time: {elapsedMilliseconds} ms");
+        }
     }
     private void OnSearchTextChanged(object sender, TextChangedEventArgs e)
     {

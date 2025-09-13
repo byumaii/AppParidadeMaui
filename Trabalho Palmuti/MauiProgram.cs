@@ -1,11 +1,18 @@
 ﻿using Microsoft.Extensions.Logging;
+using System.Diagnostics;
 
 namespace Trabalho_Palmuti
 {
+    public static class AppMetrics
+    {
+        public static readonly Stopwatch ColdStartStopwatch = new();
+    }
     public static class MauiProgram
     {
         public static MauiApp CreateMauiApp()
         {
+            AppMetrics.ColdStartStopwatch.Start();
+
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
