@@ -69,7 +69,10 @@ public partial class MainPage : ContentPage
     {
         try
         {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
             Location location = await Geolocation.Default.GetLocationAsync();
+            watch.Stop();
+            Console.WriteLine($"[AppMetrics] Tempo para obter localização GPS: {watch.ElapsedMilliseconds} ms");
 
             if (location != null)
             {

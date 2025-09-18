@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Trabalho_Palmuti.MainPage"
              xmlns:models="clr-namespace:Trabalho_Palmuti.Models"
-             Title="Capitais do Brasil"
-             BackgroundColor="{AppThemeBinding Light={StaticResource PageBackgroundColorLight}, Dark={StaticResource PageBackgroundColorDark}}">
+             Title="Capitais do Brasil">
 
     <Grid RowDefinitions="Auto, *, Auto">
 

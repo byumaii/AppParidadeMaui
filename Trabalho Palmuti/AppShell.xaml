@@ -4,7 +4,18 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Trabalho_Palmuti"
-    Title="Trabalho_Palmuti">
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    
+    Shell.FlyoutBehavior="Disabled"
+    Shell.BackgroundColor="{StaticResource RoxoPrincipal}"
+    Shell.TitleColor="{StaticResource TextoBranco}"
+    Shell.ForegroundColor="{StaticResource TextoBranco}">
+
+    <Shell.Behaviors>
+        <toolkit:StatusBarBehavior
+            StatusBarColor="{StaticResource RoxoPrincipal}"
+            StatusBarStyle="LightContent" />
+    </Shell.Behaviors>
 
     <ShellContent
         Title="Home"

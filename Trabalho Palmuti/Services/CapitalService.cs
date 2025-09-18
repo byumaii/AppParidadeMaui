@@ -11,8 +11,13 @@ namespace Trabalho_Palmuti.Services
             using var reader = new StreamReader(stream);
             var contents = await reader.ReadToEndAsync();
 
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+
             var listaCapitais = JsonSerializer.Deserialize<List<Capital>>(contents);
 
+            watch.Stop();
+            Console.WriteLine($"[AppMetrics] Tempo de Deserialização do JSON: {watch.ElapsedMilliseconds} ms");
+            
             return listaCapitais;
         }
     }

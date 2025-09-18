@@ -43,7 +43,10 @@ public partial class EstadoDetailPage : ContentPage, INotifyPropertyChanged
     {
         if (Capital != null)
         {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
             var estadoDaApi = await _ibgeService.GetEstadoAsync(Capital.EstadoId);
+            watch.Stop();
+            Console.WriteLine($"[AppMetrics] Tempo da chamada à API do IBGE: {watch.ElapsedMilliseconds} ms");
             Estado = estadoDaApi;
         }
     }

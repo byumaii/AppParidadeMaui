@@ -60,7 +60,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="Platforms\Android\Resources\values\colors.xml" />
+	  <AndroidResource Remove="Platforms\Android\Resources\values\XMLFile1.xml" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Compile Remove="Dados\JSON.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Platforms\Android\Resources\values\XMLFile1.xml" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -68,9 +77,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui" Version="12.2.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.5" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.110" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.9" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -83,10 +93,6 @@
 	  <MauiXaml Update="EstadoDetailPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Platforms\Android\Resources\values\" />
 	</ItemGroup>
 
 </Project>

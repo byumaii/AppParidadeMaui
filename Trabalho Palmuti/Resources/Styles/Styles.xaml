@@ -25,4 +25,18 @@
         <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource FrameBackgroundColorLight}, Dark={StaticResource FrameBackgroundColorDark}}" />
     </Style>
 
+    <Style TargetType="Shell" ApplyToDerivedTypes="True">
+        <Setter Property="Shell.BackgroundColor" Value="{StaticResource RoxoPrincipal}" />
+        <Setter Property="Shell.ForegroundColor" Value="{StaticResource TextoBranco}" />
+        <Setter Property="Shell.TitleColor" Value="{StaticResource TextoBranco}" />
+
+        <Setter Property="Shell.DisabledColor" Value="{AppThemeBinding Light={StaticResource SecondaryTextColorLight}, Dark={StaticResource SecondaryTextColorDark}}" />
+        <Setter Property="Shell.UnselectedColor" Value="{AppThemeBinding Light={StaticResource SecondaryTextColorLight}, Dark={StaticResource SecondaryTextColorDark}}" />
+
+        <Setter Property="Shell.TabBarBackgroundColor" Value="{AppThemeBinding Light={StaticResource PageBackgroundColorLight}, Dark={StaticResource PageBackgroundColorDark}}" />
+        <Setter Property="Shell.TabBarForegroundColor" Value="{AppThemeBinding Light={StaticResource AccentColorLight}, Dark={StaticResource AccentColorDark}}" />
+        <Setter Property="Shell.TabBarTitleColor" Value="{AppThemeBinding Light={StaticResource PrimaryTextColorLight}, Dark={StaticResource PrimaryTextColorDark}}" />
+        <Setter Property="Shell.TabBarUnselectedColor" Value="{AppThemeBinding Light={StaticResource SecondaryTextColorLight}, Dark={StaticResource SecondaryTextColorDark}}" />
+    </Style>
+
 </ResourceDictionary>

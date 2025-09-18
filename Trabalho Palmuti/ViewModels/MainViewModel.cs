@@ -43,26 +43,34 @@ namespace Trabalho_Palmuti.ViewModels
 
         public void FiltrarCapitais(string termoBusca)
         {
-            Capitais.Clear();
+            var watchFiltro = System.Diagnostics.Stopwatch.StartNew();
 
+            List<Capital> capitaisFiltradas;
             if (string.IsNullOrWhiteSpace(termoBusca))
             {
-                foreach (var capital in _listaCompletaCapitais)
-                {
-                    Capitais.Add(capital);
-                }
+                capitaisFiltradas = _listaCompletaCapitais;
             }
             else
             {
-                var capitaisFiltradas = _listaCompletaCapitais.Where(capital =>
+                capitaisFiltradas = _listaCompletaCapitais.Where(capital =>
                     capital.Nome.Contains(termoBusca, StringComparison.OrdinalIgnoreCase) ||
-                    capital.EstadoSigla.Contains(termoBusca, StringComparison.OrdinalIgnoreCase));
-
-                foreach (var capital in capitaisFiltradas)
-                {
-                    Capitais.Add(capital);
-                }
+                    capital.EstadoSigla.Contains(termoBusca, StringComparison.OrdinalIgnoreCase)).ToList();
             }
+
+            watchFiltro.Stop();
+            Console.WriteLine($"[AppMetrics] Tempo de Lógica do Filtro para '{termoBusca}': {watchFiltro.ElapsedMilliseconds} ms");
+
+
+            var watchRender = System.Diagnostics.Stopwatch.StartNew();
+
+            Capitais.Clear();
+            foreach (var capital in capitaisFiltradas)
+            {
+                Capitais.Add(capital);
+            }
+
+            watchRender.Stop();
+            Console.WriteLine($"[AppMetrics] Tempo de Renderização da Lista (UI): {watchRender.ElapsedMilliseconds} ms");
         }
     }
 }

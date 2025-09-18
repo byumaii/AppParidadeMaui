@@ -12,4 +12,7 @@
     <Color x:Key="AccentColorDark">#8062e0</Color>
     <Color x:Key="FrameBackgroundColorLight">#f7f7f7</Color>
     <Color x:Key="FrameBackgroundColorDark">#2c2c2c</Color>
+    <Color x:Key="RoxoPrincipal">#512BD4</Color>
+    <Color x:Key="TextoBranco">White</Color>
+
 </ResourceDictionary>
