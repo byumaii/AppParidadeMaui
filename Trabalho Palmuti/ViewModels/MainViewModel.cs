@@ -2,6 +2,7 @@
 using Trabalho_Palmuti.Models;
 using Trabalho_Palmuti.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace Trabalho_Palmuti.ViewModels
 {
@@ -13,6 +14,35 @@ namespace Trabalho_Palmuti.ViewModels
         private readonly CapitalService _capitalService;
         [ObservableProperty]
         private bool isListVisible = false;
+        [RelayCommand]
+        private async Task GoToDetails(Capital capital)
+        {
+            if (capital == null)
+                return;
+
+            double distanciaKm = 0;
+            if (LocalizacaoAtual != null)
+            {
+                var localizacaoCapital = new Location(capital.Latitude, capital.Longitude);
+                distanciaKm = Location.CalculateDistance(LocalizacaoAtual, localizacaoCapital, DistanceUnits.Kilometers);
+
+                await Shell.Current.DisplayAlert("Distância",
+                                   $"A distância até {capital.Nome} é de aproximadamente {distanciaKm:F0} km.",
+                                   "OK");
+            }
+            else
+            {
+                await Shell.Current.DisplayAlert("Aviso", "Clique em 'Obter Localização Atual' primeiro para calcular a distância.", "OK");
+            }
+
+            var parametros = new Dictionary<string, object>
+    {
+        { "Capital", capital },
+        { "Distancia", distanciaKm }
+    };
+
+            await Shell.Current.GoToAsync(nameof(EstadoDetailPage), parametros);
+        }
         public MainViewModel()
         {
             _capitalService = new CapitalService();

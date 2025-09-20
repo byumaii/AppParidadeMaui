@@ -83,11 +83,11 @@ public partial class MainPage : ContentPage
                 await DisplayAlert("Sucesso", "Sua localização foi salva! Agora clique em uma capital para ver a distância.", "OK");
             }
         }
-        catch (FeatureNotSupportedException fnsEx)
+        catch (FeatureNotSupportedException)
         {
             await DisplayAlert("Erro", "Seu dispositivo não suporta a geolocalização.", "OK");
         }
-        catch (PermissionException pEx)
+        catch (PermissionException)
         {
             await DisplayAlert("Erro", "A permissão para acessar a localização foi negada.", "OK");
         }

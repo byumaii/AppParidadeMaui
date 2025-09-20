@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Trabalho_Palmuti.MainPage"
              xmlns:models="clr-namespace:Trabalho_Palmuti.Models"
+             xmlns:viewmodels="clr-namespace:Trabalho_Palmuti.ViewModels"
              Title="Capitais do Brasil">
 
     <Grid RowDefinitions="Auto, *, Auto">
@@ -16,20 +17,24 @@
         <CollectionView Grid.Row="1" ItemsSource="{Binding Capitais}" IsVisible="{Binding IsListVisible}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Capital">
-                    <Frame Margin="10" 
-                           Padding="10" 
-                           BorderColor="LightGray" 
-                           CornerRadius="5"
-                           BackgroundColor="{AppThemeBinding Light={StaticResource FrameBackgroundColorLight}, Dark={StaticResource FrameBackgroundColorDark}}">
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnCapitalTapped" />
-                        </Frame.GestureRecognizers>
+                    <Border Margin="10" 
+                            Padding="10" 
+                            Stroke="LightGray"
+                            BackgroundColor="{AppThemeBinding Light={StaticResource FrameBackgroundColorLight}, Dark={StaticResource FrameBackgroundColorDark}}">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="5" />
+                        </Border.StrokeShape>
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:MainViewModel}}, Path=GoToDetailsCommand}"
+                                CommandParameter="{Binding .}" />
+                        </Border.GestureRecognizers>
 
                         <VerticalStackLayout>
                             <Label FontSize="18" FontAttributes="Bold" Text="{Binding Nome}" />
                             <Label FontSize="14" Text="{Binding EstadoSigla}" />
                         </VerticalStackLayout>
-                    </Frame>
+                    </Border>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

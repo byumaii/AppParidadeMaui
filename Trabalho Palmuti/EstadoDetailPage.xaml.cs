@@ -18,7 +18,7 @@ public partial class EstadoDetailPage : ContentPage, INotifyPropertyChanged
     public Capital Capital
     {
         get => _capital;
-        set { _capital = value; OnPropertyChanged(); CarregarDetalhesDoEstadoAsync(); }
+        set { _capital = value; OnPropertyChanged();_=CarregarDetalhesDoEstadoAsync(); }
     }
 
     public Estado Estado
