@@ -43,15 +43,15 @@ public partial class MainPage : ContentPage
         if (sender is Frame frame && frame.BindingContext is Capital capitalSelecionada)
         {
             var viewModel = (MainViewModel)BindingContext;
+            double distanciaKm = 0;
 
             if (viewModel.LocalizacaoAtual != null)
             {
                 var localizacaoCapital = new Location(capitalSelecionada.Latitude, capitalSelecionada.Longitude);
-
-                double distanciaEmKm = Location.CalculateDistance(viewModel.LocalizacaoAtual, localizacaoCapital, DistanceUnits.Kilometers);
+                distanciaKm = Location.CalculateDistance(viewModel.LocalizacaoAtual, localizacaoCapital, DistanceUnits.Kilometers);
 
                 await DisplayAlert("Distância",
-                                   $"A distância da sua localização atual até {capitalSelecionada.Nome} é de aproximadamente {distanciaEmKm:F2} km.",
+                                   $"A distância até {capitalSelecionada.Nome} é de aproximadamente {distanciaKm:F0} km.",
                                    "OK");
             }
             else
@@ -60,7 +60,8 @@ public partial class MainPage : ContentPage
             }
             var parametros = new Dictionary<string, object>
         {
-            { "Capital", capitalSelecionada }
+            { "Capital", capitalSelecionada },
+            { "Distancia", distanciaKm }
         };
             await Shell.Current.GoToAsync(nameof(EstadoDetailPage), parametros);
         }

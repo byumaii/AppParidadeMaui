@@ -1,35 +1,52 @@
 using System.ComponentModel;
 using Trabalho_Palmuti.Models;
 using Trabalho_Palmuti.Services;
+using System.Diagnostics;
 
 namespace Trabalho_Palmuti;
 
 [QueryProperty(nameof(Capital), "Capital")]
+[QueryProperty(nameof(Distancia), "Distancia")]
 public partial class EstadoDetailPage : ContentPage, INotifyPropertyChanged
 {
     private Capital _capital;
     private Estado _estado;
+    private double _distancia;
+    private string _distanciaFormatada;
     private readonly IbgeService _ibgeService;
 
     public Capital Capital
     {
         get => _capital;
-        set
-        {
-            _capital = value;
-            OnPropertyChanged();
-            CarregarDetalhesDoEstadoAsync();
-        }
+        set { _capital = value; OnPropertyChanged(); CarregarDetalhesDoEstadoAsync(); }
     }
 
     public Estado Estado
     {
         get => _estado;
+        set { _estado = value; OnPropertyChanged(); }
+    }
+
+    public double Distancia
+    {
+        get => _distancia;
         set
         {
-            _estado = value;
-            OnPropertyChanged();
+            _distancia = value;
+            if (value > 0)
+            {
+                DistanciaFormatada = $"Distância até a sua localização: {value:F0} km";
+            }
+            else
+            {
+                DistanciaFormatada = "Clique em 'Obter Localização' na tela anterior para ver a distância.";
+            }
         }
+    }
+    public string DistanciaFormatada
+    {
+        get => _distanciaFormatada;
+        set { _distanciaFormatada = value; OnPropertyChanged(); }
     }
 
     public EstadoDetailPage()
@@ -43,7 +60,7 @@ public partial class EstadoDetailPage : ContentPage, INotifyPropertyChanged
     {
         if (Capital != null)
         {
-            var watch = System.Diagnostics.Stopwatch.StartNew();
+            var watch = Stopwatch.StartNew();
             var estadoDaApi = await _ibgeService.GetEstadoAsync(Capital.EstadoId);
             watch.Stop();
             Console.WriteLine($"[AppMetrics] Tempo da chamada à API do IBGE: {watch.ElapsedMilliseconds} ms");
